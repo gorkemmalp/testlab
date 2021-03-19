@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-//sfdkshfksh
-
 void main() {
   runApp(MyApp());
 }
