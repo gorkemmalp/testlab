@@ -1,65 +1,223 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    initialRoute: "/",
+    routes: {
+      "/": (context) => Home(),
+    },
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      theme: ThemeData(fontFamily: 'Century'),
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: Colors.blue,
+              expandedHeight: 250,
+              title: Center(
+                  child: Text(
+                "T E S T L A B",
+                style: TextStyle(fontSize: 40, color: Colors.white),
+              )),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            SliverGrid.count(
+              crossAxisCount: 1,
+              childAspectRatio: 1 / 1.4,
+              children: [
+                Container(
+                  color: Colors.yellow,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        color: Colors.green,
+                        width: 200,
+                        height: 60,
+                        margin: EdgeInsets.symmetric(vertical: 20),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Giris Yap",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 40),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 200,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Kullanıcı Adı",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 200,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Sifre",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 90,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Giris",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  color: Colors.red,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        color: Colors.green,
+                        width: 200,
+                        height: 60,
+                        margin: EdgeInsets.symmetric(vertical: 20),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Giris Yap",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 40),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 90,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Kullanıcı Adı",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 90,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Sifre",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        color: Colors.green,
+                        width: 90,
+                        height: 70,
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                        child: Stack(
+                          children: <Widget>[
+                            ClipRRect(borderRadius: BorderRadius.circular(20)),
+                            Center(
+                                child: Text(
+                              "Giris",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            )),
+                            MaterialButton(onPressed: () {}),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return Card(
+                    child: Container(
+                      color: Colors.blue[100 * (index % 9 + 1)],
+                      height: 250,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Item $index",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                  );
+                },
+                childCount: 1,
+              ),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
