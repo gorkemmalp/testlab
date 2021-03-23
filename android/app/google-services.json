@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "183932287868",
+    "project_id": "testlab-edc51",
+    "storage_bucket": "testlab-edc51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183932287868:android:5fb0257be420653528c2f9",
+        "android_client_info": {
+          "package_name": "com.plamekrog.testlab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183932287868-2nb68b5jbapul48glmu2gto79hu8f40a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.plamekrog.testlab",
+            "certificate_hash": "dfc90638438545e37577dfa97703379d3b1983e5"
+          }
+        },
+        {
+          "client_id": "183932287868-cj7iuig16t05kioshi24hs8m0bgq0u5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXmwsLvUOW1ViNzDBLBUBh4sjM6OcCJ60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183932287868-cj7iuig16t05kioshi24hs8m0bgq0u5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
