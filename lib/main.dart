@@ -21,11 +21,11 @@ class _HomeState extends State<Home> {
   GoogleSignIn _googleSignIn = GoogleSignIn();
   FirebaseAuth _auth;
   bool isUserSignedIn = false;
-
   @override
   void initState() {
     super.initState();
     initApp();
+    onGoogleSignIn(context);
   }
 
   void initApp() async {
@@ -37,7 +37,6 @@ class _HomeState extends State<Home> {
 
   void checkIfUserIsSignedIn() async {
     var userSignedIn = await _googleSignIn.isSignedIn();
-
     setState(() {
       isUserSignedIn = userSignedIn;
     });
@@ -75,7 +74,7 @@ class _HomeState extends State<Home> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          height: 450,
+                          height: 432,
                           width: MediaQuery.of(context).size.width,
                           alignment: Alignment.center,
                           child: Column(
@@ -105,9 +104,9 @@ class _HomeState extends State<Home> {
                                   textAlign: TextAlign.center,
                                 ),
                               ),
-                              SizedBox(height: 25),
+                              SizedBox(height: 20),
                               Container(
-                                height: 100.0,
+                                height: 80.0,
                                 width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
@@ -122,14 +121,14 @@ class _HomeState extends State<Home> {
                         ),
                         Container(
                           color: Colors.black,
-                          height: 100,
+                          height: 88,
                           width: MediaQuery.of(context).size.width,
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.redAccent,
                                 borderRadius: BorderRadius.circular(25)),
                             margin:
-                                EdgeInsets.fromLTRB(12, 25, 12, 25), //L,T,R,B
+                                EdgeInsets.fromLTRB(25, 20, 25, 20), //L,T,R,B
                             child: FlatButton(
                                 onPressed: () {
                                   onGoogleSignIn(context);
@@ -152,7 +151,7 @@ class _HomeState extends State<Home> {
                                       child: Text("Google İle Giriş Yap",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 28),
+                                              fontSize: 25),
                                           textAlign: TextAlign.center),
                                     )
                                   ],
@@ -220,6 +219,7 @@ class WelcomeUserWidget extends StatelessWidget {
   GoogleSignIn _googleSignIn;
   User _user;
 
+  @override
   WelcomeUserWidget(User user, GoogleSignIn signIn) {
     _user = user;
     _googleSignIn = signIn;
@@ -247,66 +247,127 @@ class WelcomeUserWidget extends StatelessWidget {
               (BuildContext context, int index) {
                 return Card(
                   color: Colors.black,
-                  margin: EdgeInsets.all(1),
+                  margin: EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: [
                       Container(
-                          color: Colors.black,
-                          margin: EdgeInsets.only(bottom: 10), //L,T,R,B
-                          child: Padding(
-                              padding: EdgeInsets.all(0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Text('Test Çözeceğiniz Sınav Türünü Seçiniz',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 18)),
-                                  SizedBox(width: 10),
-                                  Card(
-                                    color: Colors.black,
-                                    child: Container(
-                                      width: 50,
-                                      height: 50,
-                                      child: MaterialButton(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                        ),
-                                        color: Colors.redAccent,
-                                        child: Icon(Icons.exit_to_app,
-                                            color: Colors.white, size: 21),
-                                        onPressed: () {
-                                          _googleSignIn.signOut();
-                                          Navigator.pop(context, false);
-                                          var userSigOut = Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => Home()),
-                                          );
-                                        },
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ))),
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.width / 7,
+                        margin: EdgeInsets.only(bottom: 10), //L,T,R,B
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            ClipOval(
+                                child: Image.network(_user.photoURL,
+                                    width: 40, height: 40, fit: BoxFit.cover)),
+                            MaterialButton(
+                              onPressed: () {
+                                Navigator.pop(context, false);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
+                                );
+                                _googleSignIn.signOut();
+                              },
+                              child: Text("Çıkış Yap",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.white)),
+                            )
+                          ],
+                        ),
+                      ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.black,
                         ),
-                        height: 800,
+                        height: 1100,
                         width: MediaQuery.of(context).size.width,
                         alignment: Alignment.center,
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              width: MediaQuery.of(context).size.width / 1.5,
-                              height: MediaQuery.of(context).size.width / 1.5,
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.all(40),
-                              child: Image(
-                                  image: AssetImage("assets/2_KPSS.png"),
-                                  fit: BoxFit.contain),
+                            MaterialButton(
+                              onPressed: null,
+                              child: Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.width / 1.5,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.all(40),
+                                child: Stack(
+                                  children: <Widget>[
+                                    Image(
+                                        image: AssetImage("assets/2_KPSS.png"),
+                                        fit: BoxFit.contain),
+                                    Container(
+                                        margin: EdgeInsets.only(bottom: 15),
+                                        alignment: Alignment.bottomCenter,
+                                        child: Text(
+                                          "KPSS",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 50),
+                                          textAlign: TextAlign.center,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            MaterialButton(
+                              onPressed: null,
+                              child: Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.width / 1.5,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.all(40),
+                                child: Stack(
+                                  children: <Widget>[
+                                    Image(
+                                        image: AssetImage("assets/2_TYT.png"),
+                                        fit: BoxFit.contain),
+                                    Container(
+                                        margin: EdgeInsets.only(bottom: 15),
+                                        alignment: Alignment.bottomCenter,
+                                        child: Text(
+                                          "TYT",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 50),
+                                          textAlign: TextAlign.center,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            MaterialButton(
+                              onPressed: null,
+                              child: Container(
+                                width: MediaQuery.of(context).size.width / 1.5,
+                                height: MediaQuery.of(context).size.width / 1.5,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.all(40),
+                                child: Stack(
+                                  children: <Widget>[
+                                    Image(
+                                        image: AssetImage("assets/2_AYT.png"),
+                                        fit: BoxFit.contain),
+                                    Container(
+                                        margin: EdgeInsets.only(bottom: 15),
+                                        alignment: Alignment.bottomCenter,
+                                        child: Text(
+                                          "AYT",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 50),
+                                          textAlign: TextAlign.center,
+                                        )),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -323,16 +384,3 @@ class WelcomeUserWidget extends StatelessWidget {
     );
   }
 }
-
-/*
-
-Text(
-                                "KPSS, LYS\nLGS FALAN...",
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-
-                              */
