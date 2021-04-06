@@ -57,6 +57,12 @@ flutter:
    - assets/2_AYT.png
    - assets/Lessons/Kimya.png
    - assets/Lessons/Matematik.png
+   - assets/Lessons/Turkce.png
+   - assets/Lessons/Geometri.png
+   - assets/Lessons/Vatandaslik.png
+   - assets/Lessons/Cografya.png
+   - assets/Lessons/Tarih.png
+   - assets/Lessons/Guncel_Bilgiler.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
