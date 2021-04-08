@@ -45,7 +45,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -59,7 +59,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -74,7 +74,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -88,7 +88,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -102,7 +102,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -116,7 +116,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -130,7 +130,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -144,7 +144,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -158,7 +158,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[

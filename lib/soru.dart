@@ -167,9 +167,12 @@ class _SoruViewState extends State<SoruView> {
                       width: 150,
                       height: 50,
                       child: Center(
-                        child: Text("Cevabı Gör",
-                            style: TextStyle(color: Colors.white, fontSize: 22),
-                            textAlign: TextAlign.center),
+                        child: MaterialButton(
+                            onPressed: () {},
+                            child: Text("Cevabı Gör",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 22),
+                                textAlign: TextAlign.center)),
                       )),
                 ),
               ),
