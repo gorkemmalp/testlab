@@ -23,8 +23,6 @@ environment:
 dependencies:
   firebase_core: ^0.5.0
   firebase_auth: ^0.18.0+1
-  google_sign_in: ^4.5.3
-  shared_preferences: any
   flutter:
     sdk: flutter
 
@@ -63,6 +61,11 @@ flutter:
    - assets/Lessons/Cografya.png
    - assets/Lessons/Tarih.png
    - assets/Lessons/Guncel_Bilgiler.png
+   - assets/Lessons/Turk_Dili_Edebiyati.png
+   - assets/Lessons/Fizik.png
+   - assets/Lessons/Biyoloji.png
+   - assets/Lessons/Felsefe.png
+   - assets/Lessons/Din.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

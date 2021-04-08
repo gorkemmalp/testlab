@@ -45,7 +45,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -59,7 +59,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -73,7 +73,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -87,7 +87,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -102,7 +102,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -116,7 +116,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[
@@ -130,7 +130,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/');
+                        Navigator.pushNamed(context, '/soru');
                       },
                       child: Stack(
                         children: <Widget>[

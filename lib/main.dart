@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:testlab/ayt.dart';
 import 'package:testlab/kpss.dart';
+import 'package:testlab/soru.dart';
 import 'package:testlab/tyt.dart';
 
 void main() {
@@ -12,6 +13,7 @@ void main() {
       "/kpss": (context) => KpssView(),
       "/tyt": (context) => TytView(),
       "/ayt": (context) => AytView(),
+      "/soru": (context) => SoruView(),
     },
   ));
 }
