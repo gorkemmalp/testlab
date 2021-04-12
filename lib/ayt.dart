@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:testlab/soru.dart';
 
 class AytView extends StatefulWidget {
   @override
@@ -7,6 +8,15 @@ class AytView extends StatefulWidget {
 }
 
 class _AytViewState extends State<AytView> {
+  void soruAc() {
+    Navigator.push(
+      context,
+      new MaterialPageRoute(
+        builder: (context) => new SoruView(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,6 +46,35 @@ class _AytViewState extends State<AytView> {
                   "A Y T",
                   style: TextStyle(fontSize: 40, color: Colors.white),
                 )),
+                bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(0.0),
+                  child: MaterialButton(
+                    shape: StadiumBorder(),
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 15),
+                      decoration: BoxDecoration(
+                        color: Colors.redAccent,
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      width: 180,
+                      height: 40,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.home, color: Colors.white),
+                          SizedBox(width: 6),
+                          Text("Ana Sayfa",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 25),
+                              textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/");
+                    },
+                  ),
+                ),
               ),
               SliverGrid.count(
                 crossAxisSpacing: 16,
@@ -45,7 +84,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -59,7 +98,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -74,7 +113,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -88,7 +127,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -102,7 +141,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -116,7 +155,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -130,7 +169,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -144,7 +183,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
@@ -158,7 +197,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/soru');
+                        soruAc();
                       },
                       child: Stack(
                         children: <Widget>[
