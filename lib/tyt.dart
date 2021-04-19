@@ -84,7 +84,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "matematik";
                         soruAc();
                       },
                       child: Stack(
@@ -99,7 +99,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "turkce";
                         soruAc();
                       },
                       child: Stack(
@@ -114,7 +114,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "fizik";
                         soruAc();
                       },
                       child: Stack(
@@ -129,7 +129,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "tarih";
                         soruAc();
                       },
                       child: Stack(
@@ -144,7 +144,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "kimya";
                         soruAc();
                       },
                       child: Stack(
@@ -159,7 +159,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "cografya";
                         soruAc();
                       },
                       child: Stack(
@@ -174,7 +174,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "biyoloji";
                         soruAc();
                       },
                       child: Stack(
@@ -189,7 +189,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "felsefe";
                         soruAc();
                       },
                       child: Stack(
@@ -204,7 +204,7 @@ class _TytViewState extends State<TytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "din";
                         soruAc();
                       },
                       child: Stack(

@@ -49,7 +49,6 @@ class _HomeState extends State<Home> {
                     margin: EdgeInsets.only(bottom: 35),
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, "/kpss");
                         Navigator.push(
                           context,
                           new MaterialPageRoute(
@@ -81,7 +80,6 @@ class _HomeState extends State<Home> {
                     margin: EdgeInsets.symmetric(vertical: 35),
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/tyt');
                         Navigator.push(
                           context,
                           new MaterialPageRoute(
@@ -113,7 +111,6 @@ class _HomeState extends State<Home> {
                     margin: EdgeInsets.symmetric(vertical: 35),
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/ayt');
                         Navigator.push(
                           context,
                           new MaterialPageRoute(

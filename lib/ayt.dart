@@ -84,6 +84,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "matematik";
                         soruAc();
                       },
                       child: Stack(
@@ -98,6 +99,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "edebiyat";
                         soruAc();
                       },
                       child: Stack(
@@ -113,6 +115,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "fizik";
                         soruAc();
                       },
                       child: Stack(
@@ -127,6 +130,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "tarih";
                         soruAc();
                       },
                       child: Stack(
@@ -141,6 +145,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "kimya";
                         soruAc();
                       },
                       child: Stack(
@@ -155,6 +160,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "cografya";
                         soruAc();
                       },
                       child: Stack(
@@ -169,6 +175,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "biyoloji";
                         soruAc();
                       },
                       child: Stack(
@@ -183,6 +190,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "felsefe";
                         soruAc();
                       },
                       child: Stack(
@@ -197,6 +205,7 @@ class _AytViewState extends State<AytView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
+                        lessonPick = "din";
                         soruAc();
                       },
                       child: Stack(

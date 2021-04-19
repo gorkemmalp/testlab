@@ -84,7 +84,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "matematik";
                         soruAc();
                       },
                       child: Stack(
@@ -99,7 +99,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "turkce";
                         soruAc();
                       },
                       child: Stack(
@@ -114,7 +114,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "geometri";
                         soruAc();
                       },
                       child: Stack(
@@ -129,7 +129,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "vatandaslik";
                         soruAc();
                       },
                       child: Stack(
@@ -145,7 +145,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "cografya";
                         soruAc();
                       },
                       child: Stack(
@@ -160,7 +160,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "tarih";
                         soruAc();
                       },
                       child: Stack(
@@ -175,7 +175,7 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        //Navigator.pushNamed(context, '/soru');
+                        lessonPick = "guncel";
                         soruAc();
                       },
                       child: Stack(

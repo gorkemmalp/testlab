@@ -24,6 +24,9 @@ dependencies:
   firebase_core: ^0.5.0
   firebase_auth: ^0.18.0+1
   cloud_firestore: any
+  flutter_spinkit: ^5.0.0
+  fluttertoast: ^8.0.3
+  shared_preferences: ^2.0.5
   provider: ^5.0.0
   flutter:
     sdk: flutter
@@ -50,7 +53,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/1_background.jpg
-   - assets/1_drop_down_arrow.png
+   - assets/1_drop_down.gif
    - assets/2_background.jpg
    - assets/2_KPSS.png
    - assets/2_TYT.png
@@ -81,24 +84,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: ceaswfte
-      fonts:
-        - asset: fonts/ceaswfte.ttf
-    - family: cebswfte
-      fonts:
-        - asset: fonts/cebswfte.ttf
-    - family: ceiswfte
-      fonts:
-        - asset: fonts/ceiswfte.ttf
-    - family: Century Bold Italic
-      fonts:
-        - asset: fonts/Century Bold Italic.ttf
-    - family: Century Bold
-      fonts:
-        - asset: fonts/Century Bold.ttf
-    - family: Century Normal
-      fonts:
-        - asset: fonts/Century Normal.ttf
     - family: Century
       fonts:
         - asset: fonts/CENTURY.ttf
