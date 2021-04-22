@@ -13,16 +13,17 @@ class SoruView extends StatefulWidget {
 }
 
 class _SoruViewState extends State<SoruView> {
-  var questionText = "";
-  var aText = "";
-  var bText = "";
-  var cText = "";
-  var dText = "";
-  var answerText = "";
-  bool asked = false;
+  var questionText = "",
+      aText = "",
+      bText = "",
+      cText = "",
+      dText = "",
+      answerText = "";
+  bool asked = false, answered = false;
   int questionNumber;
+  double answerWidth = 150, answerHeight = 50;
+  double nextWidth = 0, nextHeight = 0;
   String answerControl = "";
-  bool answered = false;
 
   String trueText = "0", falseText = "0", totalText = "0";
   int matTrue = 0, matFalse = 0, matTotal = 0;
@@ -524,6 +525,12 @@ class _SoruViewState extends State<SoruView> {
           dinFalse++;
           setCount(dinTrue, dinFalse, dinTotal);
         }
+        setState(() {
+          answerHeight = 0;
+          answerWidth = 0;
+          nextHeight = 50;
+          nextWidth = 190;
+        });
         answered = true;
       }
       if (answerControl == "Cevap: A")
@@ -541,6 +548,22 @@ class _SoruViewState extends State<SoruView> {
       else if (answerControl == "Cevap: D")
         setState(() {
           dColor = Colors.red;
+        });
+      if (answerText == "Cevap: A")
+        setState(() {
+          aColor = Colors.green;
+        });
+      else if (answerText == "Cevap: B")
+        setState(() {
+          bColor = Colors.green;
+        });
+      else if (answerText == "Cevap: C")
+        setState(() {
+          cColor = Colors.green;
+        });
+      else if (answerText == "Cevap: D")
+        setState(() {
+          dColor = Colors.green;
         });
     }
   }
@@ -602,6 +625,10 @@ class _SoruViewState extends State<SoruView> {
   void initState() {
     super.initState();
     answered = false;
+    answerHeight = 50;
+    answerWidth = 150;
+    nextHeight = 0;
+    nextWidth = 0;
     getCount();
     getQuestion();
   }
@@ -848,25 +875,57 @@ class _SoruViewState extends State<SoruView> {
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 7.8,
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        width: 150,
-                        height: 50,
-                        child: Center(
-                          child: MaterialButton(
-                              onPressed: () {
-                                wipeAsked();
-                                _showAnswer();
-                                answered = true;
-                              },
-                              child: Text("Cevabı Gör",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 22),
-                                  textAlign: TextAlign.center)),
-                        )),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              width: answerWidth,
+                              height: answerHeight,
+                              child: Center(
+                                child: MaterialButton(
+                                    onPressed: () {
+                                      wipeAsked();
+                                      _showAnswer();
+                                      answered = true;
+                                    },
+                                    child: Text("Cevabı Gör",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 22),
+                                        textAlign: TextAlign.center)),
+                              )),
+                          Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                              width: nextWidth,
+                              height: nextHeight,
+                              child: Center(
+                                child: MaterialButton(
+                                    onPressed: () {
+                                      answered = true;
+                                      Navigator.push(
+                                        context,
+                                        new MaterialPageRoute(
+                                          builder: (context) => new SoruView(),
+                                        ),
+                                      );
+                                    },
+                                    child: Row(children: [
+                                      Text("Sonraki Soru ",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 19),
+                                          textAlign: TextAlign.center),
+                                      Icon(Icons.arrow_right_alt,
+                                          size: 30, color: Colors.white),
+                                    ])),
+                              )),
+                        ]),
                   ),
                 ),
               ],

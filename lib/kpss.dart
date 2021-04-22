@@ -123,21 +123,6 @@ class _KpssViewState extends State<KpssView> {
                   Container(
                     child: MaterialButton(
                       onPressed: () {
-                        lessonPick = "geometri";
-                        soruAc();
-                      },
-                      child: Stack(
-                        children: <Widget>[
-                          Image(
-                              image: AssetImage("assets/Lessons/Geometri.png"),
-                              fit: BoxFit.contain),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: MaterialButton(
-                      onPressed: () {
                         lessonPick = "vatandaslik";
                         soruAc();
                       },
