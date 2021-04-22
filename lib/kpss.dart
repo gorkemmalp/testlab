@@ -17,6 +17,15 @@ class _KpssViewState extends State<KpssView> {
     );
   }
 
+  void soru2Ac() {
+    Navigator.push(
+      context,
+      new MaterialPageRoute(
+        builder: (context) => new SoruView(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -100,7 +109,7 @@ class _KpssViewState extends State<KpssView> {
                     child: MaterialButton(
                       onPressed: () {
                         lessonPick = "turkce";
-                        soruAc();
+                        soru2Ac();
                       },
                       child: Stack(
                         children: <Widget>[
