@@ -374,7 +374,6 @@ class _SoruViewState extends State<SoruView> {
           getQuestion();
         }
       });
-      print("Toplam Soru Sayısı: " + lessonPick.length.toString());
     });
   }
 
@@ -419,207 +418,162 @@ class _SoruViewState extends State<SoruView> {
   askControl() {
     if (answerControl == answerText) {
       //Doğru
-      if (!answered) {
-        getCount();
-        if (lessonPick == "matematik") {
-          matTrue++;
-          setCount(matTrue, matFalse, matTotal);
-        } else if (lessonPick == "turkce") {
-          turkTrue++;
-          setCount(turkTrue, turkFalse, turkTotal);
-        } else if (lessonPick == "tarih") {
-          tarihTrue++;
-          setCount(tarihTrue, tarihFalse, tarihTotal);
-        } else if (lessonPick == "guncel") {
-          guncelTrue++;
-          setCount(guncelTrue, guncelFalse, guncelTotal);
-        } else if (lessonPick == "vatandaslik") {
-          vatanTrue++;
-          setCount(vatanTrue, vatanFalse, vatanTotal);
-        } else if (lessonPick == "biyoloji") {
-          biyoTrue++;
-          setCount(biyoTrue, biyoFalse, biyoTotal);
-        } else if (lessonPick == "cografya") {
-          cogrTrue++;
-          setCount(cogrTrue, cogrFalse, cogrTotal);
-        } else if (lessonPick == "felsefe") {
-          felsTrue++;
-          setCount(felsTrue, felsFalse, felsTotal);
-        } else if (lessonPick == "fizik") {
-          fizikTrue++;
-          setCount(fizikTrue, fizikFalse, fizikTotal);
-        } else if (lessonPick == "kimya") {
-          kimyaTrue++;
-          setCount(kimyaTrue, kimyaFalse, kimyaTotal);
-        } else if (lessonPick == "edebiyat") {
-          edebTrue++;
-          setCount(edebTrue, edebFalse, edebTotal);
-        } else if (lessonPick == "din") {
-          dinTrue++;
-          setCount(dinTrue, dinFalse, dinTotal);
-        }
-        answered = true;
-      }
-      if (answerControl == "Cevap: A")
-        setState(() {
-          aColor = Colors.green;
-        });
-      else if (answerControl == "Cevap: B")
-        setState(() {
-          bColor = Colors.green;
-        });
-      else if (answerControl == "Cevap: C")
-        setState(() {
-          cColor = Colors.green;
-        });
-      else if (answerControl == "Cevap: D")
-        setState(() {
-          dColor = Colors.green;
-        });
-      showCongrats();
-      new Future.delayed(const Duration(seconds: 2), () {
-        Navigator.push(
-          context,
-          new MaterialPageRoute(
-            builder: (context) => new SoruView(),
-          ),
-        );
-      });
+      rightAnswer();
     } else {
       //Yanlış
-      if (!answered) {
-        getCount();
-        if (lessonPick == "matematik") {
-          matFalse++;
-          setCount(matTrue, matFalse, matTotal);
-        } else if (lessonPick == "turkce") {
-          turkFalse++;
-          setCount(turkTrue, turkFalse, turkTotal);
-        } else if (lessonPick == "tarih") {
-          tarihFalse++;
-          setCount(tarihTrue, tarihFalse, tarihTotal);
-        } else if (lessonPick == "guncel") {
-          guncelFalse++;
-          setCount(guncelTrue, guncelFalse, guncelTotal);
-        } else if (lessonPick == "vatandaslik") {
-          vatanFalse++;
-          setCount(vatanTrue, vatanFalse, vatanTotal);
-        } else if (lessonPick == "biyoloji") {
-          biyoFalse++;
-          setCount(biyoTrue, biyoFalse, biyoTotal);
-        } else if (lessonPick == "cografya") {
-          cogrFalse++;
-          setCount(cogrTrue, cogrFalse, cogrTotal);
-        } else if (lessonPick == "felsefe") {
-          felsFalse++;
-          setCount(felsTrue, felsFalse, felsTotal);
-        } else if (lessonPick == "fizik") {
-          fizikFalse++;
-          setCount(fizikTrue, fizikFalse, fizikTotal);
-        } else if (lessonPick == "kimya") {
-          kimyaFalse++;
-          setCount(kimyaTrue, kimyaFalse, kimyaTotal);
-        } else if (lessonPick == "edebiyat") {
-          edebFalse++;
-          setCount(edebTrue, edebFalse, edebTotal);
-        } else if (lessonPick == "din") {
-          dinFalse++;
-          setCount(dinTrue, dinFalse, dinTotal);
-        }
-        setState(() {
-          answerHeight = 0;
-          answerWidth = 0;
-          nextHeight = 50;
-          nextWidth = 190;
-        });
-        answered = true;
-      }
-      if (answerControl == "Cevap: A")
-        setState(() {
-          aColor = Colors.red;
-        });
-      else if (answerControl == "Cevap: B")
-        setState(() {
-          bColor = Colors.red;
-        });
-      else if (answerControl == "Cevap: C")
-        setState(() {
-          cColor = Colors.red;
-        });
-      else if (answerControl == "Cevap: D")
-        setState(() {
-          dColor = Colors.red;
-        });
-      if (answerText == "Cevap: A")
-        setState(() {
-          aColor = Colors.green;
-        });
-      else if (answerText == "Cevap: B")
-        setState(() {
-          bColor = Colors.green;
-        });
-      else if (answerText == "Cevap: C")
-        setState(() {
-          cColor = Colors.green;
-        });
-      else if (answerText == "Cevap: D")
-        setState(() {
-          dColor = Colors.green;
-        });
+      wrongAnswer();
     }
   }
 
-  wipeAsked() {
-    for (int i = 0; i <= 12; i++) {
-      FirebaseFirestore.instance
-          .collection("matematik")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("turkce")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("tarih")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("guncel")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("vatandaslik")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("biyoloji")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("cografya")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("felsefe")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("fizik")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("kimya")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("edebiyat")
-          .doc(i.toString())
-          .update({'asked': false});
-      FirebaseFirestore.instance
-          .collection("din")
-          .doc(i.toString())
-          .update({'asked': false});
+  rightAnswer() {
+    if (!answered) {
+      getCount();
+      if (lessonPick == "matematik") {
+        matTrue++;
+        setCount(matTrue, matFalse, matTotal);
+      } else if (lessonPick == "turkce") {
+        turkTrue++;
+        setCount(turkTrue, turkFalse, turkTotal);
+      } else if (lessonPick == "tarih") {
+        tarihTrue++;
+        setCount(tarihTrue, tarihFalse, tarihTotal);
+      } else if (lessonPick == "guncel") {
+        guncelTrue++;
+        setCount(guncelTrue, guncelFalse, guncelTotal);
+      } else if (lessonPick == "vatandaslik") {
+        vatanTrue++;
+        setCount(vatanTrue, vatanFalse, vatanTotal);
+      } else if (lessonPick == "biyoloji") {
+        biyoTrue++;
+        setCount(biyoTrue, biyoFalse, biyoTotal);
+      } else if (lessonPick == "cografya") {
+        cogrTrue++;
+        setCount(cogrTrue, cogrFalse, cogrTotal);
+      } else if (lessonPick == "felsefe") {
+        felsTrue++;
+        setCount(felsTrue, felsFalse, felsTotal);
+      } else if (lessonPick == "fizik") {
+        fizikTrue++;
+        setCount(fizikTrue, fizikFalse, fizikTotal);
+      } else if (lessonPick == "kimya") {
+        kimyaTrue++;
+        setCount(kimyaTrue, kimyaFalse, kimyaTotal);
+      } else if (lessonPick == "edebiyat") {
+        edebTrue++;
+        setCount(edebTrue, edebFalse, edebTotal);
+      } else if (lessonPick == "din") {
+        dinTrue++;
+        setCount(dinTrue, dinFalse, dinTotal);
+      }
+      answered = true;
     }
+    if (answerControl == "Cevap: A")
+      setState(() {
+        aColor = Colors.green;
+      });
+    else if (answerControl == "Cevap: B")
+      setState(() {
+        bColor = Colors.green;
+      });
+    else if (answerControl == "Cevap: C")
+      setState(() {
+        cColor = Colors.green;
+      });
+    else if (answerControl == "Cevap: D")
+      setState(() {
+        dColor = Colors.green;
+      });
+    showCongrats();
+    new Future.delayed(const Duration(seconds: 2), () {
+      Navigator.push(
+        context,
+        new MaterialPageRoute(
+          builder: (context) => new SoruView(),
+        ),
+      );
+    });
+  }
+
+  wrongAnswer() {
+    if (!answered) {
+      getCount();
+      if (lessonPick == "matematik") {
+        matFalse++;
+        setCount(matTrue, matFalse, matTotal);
+      } else if (lessonPick == "turkce") {
+        turkFalse++;
+        setCount(turkTrue, turkFalse, turkTotal);
+      } else if (lessonPick == "tarih") {
+        tarihFalse++;
+        setCount(tarihTrue, tarihFalse, tarihTotal);
+      } else if (lessonPick == "guncel") {
+        guncelFalse++;
+        setCount(guncelTrue, guncelFalse, guncelTotal);
+      } else if (lessonPick == "vatandaslik") {
+        vatanFalse++;
+        setCount(vatanTrue, vatanFalse, vatanTotal);
+      } else if (lessonPick == "biyoloji") {
+        biyoFalse++;
+        setCount(biyoTrue, biyoFalse, biyoTotal);
+      } else if (lessonPick == "cografya") {
+        cogrFalse++;
+        setCount(cogrTrue, cogrFalse, cogrTotal);
+      } else if (lessonPick == "felsefe") {
+        felsFalse++;
+        setCount(felsTrue, felsFalse, felsTotal);
+      } else if (lessonPick == "fizik") {
+        fizikFalse++;
+        setCount(fizikTrue, fizikFalse, fizikTotal);
+      } else if (lessonPick == "kimya") {
+        kimyaFalse++;
+        setCount(kimyaTrue, kimyaFalse, kimyaTotal);
+      } else if (lessonPick == "edebiyat") {
+        edebFalse++;
+        setCount(edebTrue, edebFalse, edebTotal);
+      } else if (lessonPick == "din") {
+        dinFalse++;
+        setCount(dinTrue, dinFalse, dinTotal);
+      }
+      setState(() {
+        answerHeight = 0;
+        answerWidth = 0;
+        nextHeight = 50;
+        nextWidth = 190;
+      });
+      answered = true;
+    }
+    if (answerControl == "Cevap: A")
+      setState(() {
+        aColor = Colors.red;
+      });
+    else if (answerControl == "Cevap: B")
+      setState(() {
+        bColor = Colors.red;
+      });
+    else if (answerControl == "Cevap: C")
+      setState(() {
+        cColor = Colors.red;
+      });
+    else if (answerControl == "Cevap: D")
+      setState(() {
+        dColor = Colors.red;
+      });
+    if (answerText == "Cevap: A")
+      setState(() {
+        aColor = Colors.green;
+      });
+    else if (answerText == "Cevap: B")
+      setState(() {
+        bColor = Colors.green;
+      });
+    else if (answerText == "Cevap: C")
+      setState(() {
+        cColor = Colors.green;
+      });
+    else if (answerText == "Cevap: D")
+      setState(() {
+        dColor = Colors.green;
+      });
   }
 
   @override
@@ -658,6 +612,44 @@ class _SoruViewState extends State<SoruView> {
               ),
             );
           });
+      setState(() {
+        answerHeight = 0;
+        answerWidth = 0;
+        nextHeight = 50;
+        nextWidth = 190;
+      });
+      if (answerControl == "Cevap: A")
+        setState(() {
+          aColor = Colors.red;
+        });
+      else if (answerControl == "Cevap: B")
+        setState(() {
+          bColor = Colors.red;
+        });
+      else if (answerControl == "Cevap: C")
+        setState(() {
+          cColor = Colors.red;
+        });
+      else if (answerControl == "Cevap: D")
+        setState(() {
+          dColor = Colors.red;
+        });
+      if (answerText == "Cevap: A")
+        setState(() {
+          aColor = Colors.green;
+        });
+      else if (answerText == "Cevap: B")
+        setState(() {
+          bColor = Colors.green;
+        });
+      else if (answerText == "Cevap: C")
+        setState(() {
+          cColor = Colors.green;
+        });
+      else if (answerText == "Cevap: D")
+        setState(() {
+          dColor = Colors.green;
+        });
     }
 
     return new WillPopScope(
@@ -889,7 +881,7 @@ class _SoruViewState extends State<SoruView> {
                               child: Center(
                                 child: MaterialButton(
                                     onPressed: () {
-                                      wipeAsked();
+                                      //wipeAsked();
                                       _showAnswer();
                                       answered = true;
                                     },

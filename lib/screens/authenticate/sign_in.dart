@@ -124,7 +124,6 @@ class _SignInState extends State<SignIn> {
                                       } else {
                                         Fluttertoast.showToast(
                                             msg: "Oturum Başarıyla Açıldı!");
-                                        print(result.uid);
                                       }
                                     },
                                     child: Row(
